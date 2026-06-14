@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PawDrop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root {
+      --bg-base:       #0b0d11;
+      --bg-surface:    #111318;
+      --bg-card:       #16191f;
+      --bg-card-hover: #1c2028;
+      --border:        rgba(255,255,255,0.06);
+      --border-accent: rgba(0,225,180,0.25);
+      --neon:          #00e1b4;
+      --neon-dim:      rgba(0,225,180,0.12);
+      --neon-glow:     rgba(0,225,180,0.35);
+      --text-primary:  #f0f2f5;
+      --text-secondary:#9aa0ac;
+      --text-muted:    #5c6370;
+      --radius-sm:     8px;
+      --radius-md:     14px;
+      --radius-lg:     20px;
+      --font-display:  'Space Grotesk', sans-serif;
+      --font-body:     'Inter', sans-serif;
+      --transition:    0.2s ease;
+    }
+
+    /* ─── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--neon); text-decoration: none; transition: opacity var(--transition); }
+    a:hover { opacity: 0.75; }
+
+    /* ─── LAYOUT ─────────────────────────────────────── */
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+    .logo-paw {
+      width: 34px;
+      height: 34px;
+      background: var(--neon-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .logo span { color: var(--neon); }
+    .header-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--neon);
+      background: var(--neon-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: 999px;
+      padding: 4px 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── HERO BLOCK ─────────────────────────────────── */
+    .hero {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--neon);
+      border-radius: 2px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--neon);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .hero-meta-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .hero-meta-value {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ─── TOC ────────────────────────────────────────── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--neon);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin: 48px 0;
+    }
+    .toc-title {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 6px 24px;
+    }
+    .toc-list li a {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+    .toc-list li a:hover { color: var(--neon); opacity: 1; }
+    .toc-list li a::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--neon-dim);
+      border: 1px solid var(--neon);
+      flex-shrink: 0;
+      transition: background var(--transition);
+    }
+    .toc-list li a:hover::before { background: var(--neon); }
+
+    /* ─── SECTION ────────────────────────────────────── */
+    .policy-section {
+      padding: 52px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-of-type { border-bottom: none; }
+
+    .section-number {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+    .policy-section h3 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 28px 0 10px;
+    }
+    .policy-section p {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    /* ─── LIST ───────────────────────────────────────── */
+    .policy-list {
+      list-style: none;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.915rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .policy-list li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--neon);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    /* ─── INFO CARDS (inline callouts) ──────────────── */
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .info-card.accent {
+      background: var(--neon-dim);
+      border-color: var(--border-accent);
+    }
+    .info-card p {
+      margin: 0;
+      font-size: 0.875rem;
+    }
+    .info-card strong {
+      color: var(--neon);
+      font-weight: 600;
+    }
+
+    /* ─── RIGHTS GRID ────────────────────────────────── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .right-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .right-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+    }
+    .right-card-icon {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .right-card-title {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .right-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT BOX ────────────────────────────────── */
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      margin-top: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, var(--neon-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-box-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .contact-box h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .contact-box > p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: border-color var(--transition);
+    }
+    .contact-row:hover { border-color: var(--border-accent); }
+    .contact-row-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--neon-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-row-info { flex: 1; }
+    .contact-row-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .contact-row-value {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .contact-row-value a { color: var(--neon); }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    .site-footer {
+      margin-top: 56px;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .footer-logo span { color: var(--neon); }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+    .compliance-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: 100%;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .badge {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 600px) {
+      .site-header { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero-meta { gap: 18px; }
+      .toc { padding: 20px 20px; }
+      .toc-list { grid-template-columns: 1fr; }
+      .policy-section { padding: 40px 0; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .contact-box { padding: 32px 24px; }
+      .contact-box h2 { font-size: 1.3rem; }
+      .footer-copy { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ── HEADER ───────────────────────────────────── -->
+  <header class="site-header">
+    <div class="logo">
+      <div class="logo-paw">🐾</div>
+      Paw<span>Drop</span>
+    </div>
+    <span class="header-badge">Legal Document</span>
+  </header>
+
+  <!-- ── HERO ─────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-eyebrow">Privacy & Data Policy</div>
+    <h1>Your privacy,<br /><em>handled seriously.</em></h1>
+    <p style="font-size:0.925rem;color:var(--text-secondary);max-width:560px;margin-top:12px;">
+      This Privacy Policy explains how PawDrop collects, uses, and protects your personal
+      data when you shop with us or interact with our platforms. We comply with GDPR,
+      UK GDPR, and CCPA.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Effective Date</span>
+        <span class="hero-meta-value">June 14, 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Last Updated</span>
+        <span class="hero-meta-value">June 14, 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Applies To</span>
+        <span class="hero-meta-value">yourwebsite.com &amp; all PawDrop channels</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TABLE OF CONTENTS ─────────────────────────── -->
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#data-collection">Data We Collect</a></li>
+      <li><a href="#data-usage">How We Use Your Data</a></li>
+      <li><a href="#third-party">Third-Party &amp; Dropshipping</a></li>
+      <li><a href="#international-transfers">International Transfers</a></li>
+      <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+      <li><a href="#data-retention">Data Retention</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#user-rights">Your Rights (GDPR / CCPA)</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#policy-updates">Policy Updates</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── SECTION 1: DATA COLLECTION ───────────────── -->
+  <section class="policy-section" id="data-collection">
+    <span class="section-number">Section 01</span>
+    <h2>Data We Collect</h2>
+    <p>
+      When you interact with PawDrop — whether placing an order, browsing our store, or
+      reaching out to us — we may collect the following categories of personal information:
+    </p>
+
+    <h3>Information You Provide Directly</h3>
+    <ul class="policy-list">
+      <li>Full name, email address, phone number, and billing/shipping address</li>
+      <li>Payment details (processed securely by third-party payment processors — we do not store full card data)</li>
+      <li>Account credentials if you create an account on our platform</li>
+      <li>Messages, reviews, and support communications you send us</li>
+    </ul>
+
+    <h3>Information Collected Automatically</h3>
+    <ul class="policy-list">
+      <li>IP address, browser type, operating system, and device identifiers</li>
+      <li>Pages visited, referral URLs, time on site, and clickstream data</li>
+      <li>Cookie identifiers and advertising tracking pixels (see <a href="#cookies">Section 5</a>)</li>
+      <li>Approximate geographic location derived from IP address</li>
+    </ul>
+
+    <h3>Information from Third Parties</h3>
+    <ul class="policy-list">
+      <li>Social media profile data if you sign in via Facebook, Google, or similar services</li>
+      <li>Shipping carrier updates from our fulfillment and logistics partners</li>
+      <li>Aggregated analytics data from advertising platforms (e.g., Meta Pixel, Google Ads)</li>
+    </ul>
+  </section>
+
+  <!-- ── SECTION 2: DATA USAGE ─────────────────────── -->
+  <section class="policy-section" id="data-usage">
+    <span class="section-number">Section 02</span>
+    <h2>How We Use Your Data</h2>
+    <p>
+      We process your personal data only for legitimate, specified purposes. The legal bases
+      for processing under GDPR are noted where applicable.
+    </p>
+
+    <ul class="policy-list">
+      <li><strong style="color:var(--text-primary);">Order Fulfilment (Contract):</strong> Processing your purchase, coordinating with suppliers, arranging delivery, and sending shipping notifications.</li>
+      <li><strong style="color:var(--text-primary);">Customer Support (Contract / Legitimate Interest):</strong> Responding to enquiries, resolving disputes, and managing returns or refunds.</li>
+      <li><strong style="color:var(--text-primary);">Marketing Communications (Consent):</strong> Sending promotional emails, offers, or product updates — only where you have opted in. You may withdraw consent at any time.</li>
+      <li><strong style="color:var(--text-primary);">Personalisation (Legitimate Interest):</strong> Tailoring product recommendations, homepage content, and advertising based on browsing behaviour.</li>
+      <li><strong style="color:var(--text-primary);">Analytics &amp; Improvement (Legitimate Interest):</strong> Understanding how customers use our store to improve performance, layout, and product selection.</li>
+      <li><strong style="color:var(--text-primary);">Fraud Prevention &amp; Security (Legitimate Interest / Legal Obligation):</strong> Detecting suspicious transactions and protecting customer accounts.</li>
+      <li><strong style="color:var(--text-primary);">Legal Compliance (Legal Obligation):</strong> Meeting tax reporting, accounting, and consumer protection obligations applicable in your jurisdiction.</li>
+    </ul>
+
+    <div class="info-card accent">
+      <p><strong>We do not sell your personal data.</strong> PawDrop does not sell, rent, or trade your personal information to third parties for their own marketing purposes.</p>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: THIRD-PARTY & DROPSHIPPING ─────── -->
+  <section class="policy-section" id="third-party">
+    <span class="section-number">Section 03</span>
+    <h2>Third-Party Sharing &amp; Dropshipping</h2>
+    <p>
+      As an international dropshipping business, fulfilment of your orders requires us to
+      share certain personal data with trusted third-party partners. We share only the
+      minimum data necessary for each partner's specific role.
+    </p>
+
+    <h3>Fulfilment &amp; Dropshipping Suppliers</h3>
+    <p>
+      Your name, shipping address, and order details are shared with our product suppliers
+      and fulfilment partners (which may include overseas warehouses and logistics
+      companies) solely to process and deliver your order. These partners are contractually
+      prohibited from using your data for any other purpose.
+    </p>
+
+    <h3>Shipping &amp; Logistics Carriers</h3>
+    <p>
+      Delivery partners (such as DHL, FedEx, USPS, Royal Mail, Australia Post, and Canada
+      Post, among others) receive your name and delivery address to facilitate shipment.
+    </p>
+
+    <h3>Payment Processors</h3>
+    <p>
+      Payment is handled by PCI-DSS compliant processors (e.g., Stripe, PayPal). PawDrop
+      does not have access to or store your full payment card details.
+    </p>
+
+    <h3>Marketing &amp; Analytics Platforms</h3>
+    <ul class="policy-list">
+      <li>Meta Platforms (Facebook / Instagram Ads) — subject to Meta's own Data Policy</li>
+      <li>Google LLC — Google Analytics and Google Ads, subject to Google's Privacy Policy</li>
+      <li>Email marketing providers (e.g., Klaviyo, Mailchimp) for campaign delivery</li>
+    </ul>
+
+    <h3>Legal &amp; Regulatory Authorities</h3>
+    <p>
+      We may disclose personal data to government authorities, law enforcement, or courts
+      where legally required to do so, or where necessary to protect the rights, safety,
+      or property of PawDrop or its customers.
+    </p>
+
+    <div class="info-card">
+      <p>All third-party data processors are bound by Data Processing Agreements (DPAs) and are required to implement appropriate technical and organisational security measures.</p>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: INTERNATIONAL TRANSFERS ────────── -->
+  <section class="policy-section" id="international-transfers">
+    <span class="section-number">Section 04</span>
+    <h2>International Data Transfers</h2>
+    <p>
+      PawDrop operates globally, and your personal data may be transferred to and processed
+      in countries outside your country of residence — including the United States, countries
+      within the European Economic Area (EEA), and third countries where our suppliers or
+      service providers are located.
+    </p>
+    <p>
+      Where personal data is transferred outside the EEA or UK, we ensure appropriate
+      safeguards are in place, including:
+    </p>
+    <ul class="policy-list">
+      <li><strong style="color:var(--text-primary);">Standard Contractual Clauses (SCCs)</strong> approved by the European Commission</li>
+      <li><strong style="color:var(--text-primary);">UK International Data Transfer Agreements (IDTAs)</strong> for transfers from the UK</li>
+      <li><strong style="color:var(--text-primary);">Adequacy Decisions</strong> where the European Commission or UK government has determined the destination country provides adequate protection</li>
+      <li>Binding Corporate Rules or other recognised safeguards where applicable</li>
+    </ul>
+    <p>
+      You may request a copy of the specific transfer mechanisms applied to your data by
+      contacting us at <a href="mailto:your-email@domain.com">your-email@domain.com</a>.
+    </p>
+  </section>
+
+  <!-- ── SECTION 5: COOKIES ─────────────────────────── -->
+  <section class="policy-section" id="cookies">
+    <span class="section-number">Section 05</span>
+    <h2>Cookies &amp; Tracking Technologies</h2>
+    <p>
+      We use cookies, pixels, and similar tracking technologies on our website to enhance
+      your experience and support our marketing efforts. Cookies are small data files stored
+      on your device.
+    </p>
+
+    <h3>Types of Cookies We Use</h3>
+    <ul class="policy-list">
+      <li><strong style="color:var(--text-primary);">Strictly Necessary:</strong> Required for the website to function (e.g., shopping cart, login sessions). These cannot be disabled.</li>
+      <li><strong style="color:var(--text-primary);">Performance / Analytics:</strong> Help us understand site usage (e.g., Google Analytics). Enabled only with your consent.</li>
+      <li><strong style="color:var(--text-primary);">Functional:</strong> Remember your preferences such as language, currency, or saved items.</li>
+      <li><strong style="color:var(--text-primary);">Targeting / Advertising:</strong> Used to deliver relevant ads on platforms such as Facebook and Google. Enabled only with your consent.</li>
+    </ul>
+    <p>
+      You can manage your cookie preferences via our Cookie Consent banner on your first
+      visit, or at any time through your browser settings. Note that disabling certain
+      cookies may affect the functionality of our store.
+    </p>
+  </section>
+
+  <!-- ── SECTION 6: DATA RETENTION ─────────────────── -->
+  <section class="policy-section" id="data-retention">
+    <span class="section-number">Section 06</span>
+    <h2>Data Retention</h2>
+    <p>
+      We retain personal data only for as long as necessary to fulfil the purposes described
+      in this policy, or as required by applicable law.
+    </p>
+    <ul class="policy-list">
+      <li><strong style="color:var(--text-primary);">Order &amp; Transaction Records:</strong> Retained for up to 7 years to satisfy tax, accounting, and commercial law obligations.</li>
+      <li><strong style="color:var(--text-primary);">Customer Account Data:</strong> Retained while your account is active, plus 2 years after last activity, unless deletion is requested earlier.</li>
+      <li><strong style="color:var(--text-primary);">Marketing Data:</strong> Retained until you unsubscribe or withdraw consent, plus 12 months thereafter for record-keeping.</li>
+      <li><strong style="color:var(--text-primary);">Support Communications:</strong> Retained for up to 3 years from last interaction.</li>
+      <li><strong style="color:var(--text-primary);">Analytics Data:</strong> Retained in anonymised or aggregated form; personally identifiable data deleted after 26 months.</li>
+    </ul>
+    <p>
+      Upon expiry of the applicable retention period, data is securely deleted or
+      irreversibly anonymised.
+    </p>
+  </section>
+
+  <!-- ── SECTION 7: SECURITY ────────────────────────── -->
+  <section class="policy-section" id="security">
+    <span class="section-number">Section 07</span>
+    <h2>Data Security</h2>
+    <p>
+      We implement industry-standard technical and organisational measures to protect your
+      personal data from unauthorised access, loss, alteration, or disclosure. These include:
+    </p>
+    <ul class="policy-list">
+      <li>TLS/SSL encryption for all data transmitted between your browser and our servers</li>
+      <li>Strict access controls limiting data access to authorised personnel only</li>
+      <li>PCI-DSS compliant payment processing — we never store raw card data</li>
+      <li>Regular security audits and vulnerability assessments</li>
+      <li>Incident response procedures in accordance with applicable breach notification laws</li>
+    </ul>
+    <p>
+      In the event of a personal data breach that poses a risk to your rights and freedoms,
+      we will notify the relevant supervisory authority within 72 hours (as required under
+      GDPR) and will inform affected individuals without undue delay where required.
+    </p>
+  </section>
+
+  <!-- ── SECTION 8: USER RIGHTS ─────────────────────── -->
+  <section class="policy-section" id="user-rights">
+    <span class="section-number">Section 08</span>
+    <h2>Your Rights</h2>
+    <p>
+      Depending on your country of residence, you have the following rights regarding your
+      personal data. We will respond to all verified requests within <strong style="color:var(--text-primary);">30 days</strong>.
+    </p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <span class="right-card-icon">📋</span>
+        <div class="right-card-title">Right of Access</div>
+        <div class="right-card-desc">Request a copy of the personal data we hold about you. (GDPR Art. 15 / CCPA)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">✏️</span>
+        <div class="right-card-title">Right to Rectification</div>
+        <div class="right-card-desc">Request correction of any inaccurate or incomplete data. (GDPR Art. 16)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">🗑️</span>
+        <div class="right-card-title">Right to Erasure</div>
+        <div class="right-card-desc">Request deletion of your personal data, subject to legal retention obligations. (GDPR Art. 17 / CCPA)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">⏸️</span>
+        <div class="right-card-title">Right to Restrict Processing</div>
+        <div class="right-card-desc">Request that we pause processing of your data in certain circumstances. (GDPR Art. 18)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">📦</span>
+        <div class="right-card-title">Right to Portability</div>
+        <div class="right-card-desc">Receive your data in a structured, machine-readable format. (GDPR Art. 20)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">🚫</span>
+        <div class="right-card-title">Right to Object</div>
+        <div class="right-card-desc">Object to processing based on legitimate interests or for direct marketing. (GDPR Art. 21)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">↩️</span>
+        <div class="right-card-title">Withdraw Consent</div>
+        <div class="right-card-desc">Withdraw any previously given consent for processing at any time, without affecting prior processing.</div>
+      </div>
+      <div class="right-card">
+        <span class="right-card-icon">🏛️</span>
+        <div class="right-card-title">Right to Complain</div>
+        <div class="right-card-desc">Lodge a complaint with your local data protection supervisory authority at any time.</div>
+      </div>
+    </div>
+
+    <div class="info-card" style="margin-top:24px;">
+      <p>
+        <strong>California Residents (CCPA):</strong> You additionally have the right to
+        know whether your personal information is being sold (it is not), and the right to
+        opt out of any such sale. PawDrop does not discriminate against customers who
+        exercise their privacy rights.
+      </p>
+    </div>
+
+    <div class="info-card" style="margin-top:12px;">
+      <p>
+        <strong>Supervisory Authorities:</strong> EU residents may contact their national
+        Data Protection Authority (DPA). UK residents may contact the ICO
+        (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>).
+        Australian residents may contact the OAIC
+        (<a href="https://oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a>).
+        Canadian residents may contact the OPC
+        (<a href="https://priv.gc.ca" target="_blank" rel="noopener">priv.gc.ca</a>).
+      </p>
+    </div>
+
+    <p style="margin-top:20px;">
+      To exercise any of the above rights, please contact us using the details in
+      <a href="#contact">Section 11</a>. We may need to verify your identity before
+      processing your request.
+    </p>
+  </section>
+
+  <!-- ── SECTION 9: CHILDREN ───────────────────────── -->
+  <section class="policy-section" id="children">
+    <span class="section-number">Section 09</span>
+    <h2>Children's Privacy</h2>
+    <p>
+      PawDrop's services are not directed to children under the age of 16 (or the
+      applicable age of digital consent in your jurisdiction). We do not knowingly collect
+      personal data from minors. If you believe we have inadvertently collected information
+      from a child, please contact us immediately at
+      <a href="mailto:your-email@domain.com">your-email@domain.com</a> and we will
+      take prompt steps to delete such data.
+    </p>
+  </section>
+
+  <!-- ── SECTION 10: POLICY UPDATES ───────────────── -->
+  <section class="policy-section" id="policy-updates">
+    <span class="section-number">Section 10</span>
+    <h2>Policy Updates</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our
+      practices, legal requirements, or business operations. When we make material changes,
+      we will update the <strong style="color:var(--text-primary);">Effective Date</strong>
+      at the top of this page and, where required by law, notify you by email or through
+      a prominent notice on our website.
+    </p>
+    <p>
+      Your continued use of PawDrop's services after any update constitutes your
+      acknowledgment of the revised policy. We encourage you to review this page periodically.
+    </p>
+  </section>
+
+  <!-- ── CONTACT BOX ────────────────────────────────── -->
+  <div class="contact-box" id="contact">
+    <span class="contact-box-eyebrow">Section 11 — Contact &amp; Privacy Requests</span>
+    <h2>Get in touch with us</h2>
+    <p>
+      Have a question about this policy, want to exercise your data rights, or need to
+      report a concern? Our privacy team is ready to help. We respond to all enquiries
+      within 30 days.
+    </p>
+
+    <div class="contact-channels">
+      <div class="contact-row">
+        <div class="contact-row-icon">✉️</div>
+        <div class="contact-row-info">
+          <span class="contact-row-label">Privacy Email</span>
+          <span class="contact-row-value">
+            <a href="mailto:your-email@domain.com">your-email@domain.com</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-row-icon">🌐</div>
+        <div class="contact-row-info">
+          <span class="contact-row-label">Website</span>
+          <span class="contact-row-value">
+            <a href="https://yourwebsite.com" target="_blank" rel="noopener">yourwebsite.com</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-row-icon">📍</div>
+        <div class="contact-row-info">
+          <span class="contact-row-label">Registered Business Address</span>
+          <span class="contact-row-value">PawDrop — 350 5th Ave, New York, NY 10118, USA</span>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-row-icon">🐾</div>
+        <div class="contact-row-info">
+          <span class="contact-row-label">Facebook Page</span>
+          <span class="contact-row-value">
+            <a href="https://facebook.com/PawDrop" target="_blank" rel="noopener">facebook.com/PawDrop</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-logo">Paw<span>Drop</span></div>
+    <div class="footer-copy">
+      &copy; 2026 PawDrop. All rights reserved.<br />
+      350 5th Ave, New York, NY 10118, USA
+    </div>
+    <div class="compliance-badges">
+      <span class="badge">GDPR Compliant</span>
+      <span class="badge">UK GDPR Compliant</span>
+      <span class="badge">CCPA Compliant</span>
+      <span class="badge">PIPEDA Compliant</span>
+      <span class="badge">Australian Privacy Act</span>
+      <span class="badge">SSL Secured</span>
+      <span class="badge">No Data Selling</span>
+    </div>
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+</body>
+</html>
